@@ -37,8 +37,8 @@ namespace CheckFlexService
 
     public partial class frmMain : Form
     {
-        const string _한탄강 = "0007"; // login
-        const string _용자휴 = "0009"; // login
+        const string _한탄강 = "0007"; // login_
+        const string _용자휴 = "0009"; // login_
         const string _자라섬 = "0012";
         const string _중랑숲 = "0013";
         const string _너나들 = "0045";

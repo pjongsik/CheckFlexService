@@ -16,7 +16,6 @@ namespace CheckFlexService
             InitializeComponent();
 
             // 아라아닐이
-
             lbText.Text = text;
         }
     }

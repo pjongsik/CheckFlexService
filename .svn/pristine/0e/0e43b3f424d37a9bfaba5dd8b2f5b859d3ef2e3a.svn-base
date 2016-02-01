@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="CheckFlexService.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <system.serviceModel>
+        <bindings />
+        <client />
+    </system.serviceModel>
+    <applicationSettings>
+        <CheckFlexService.Properties.Settings>
+            <setting name="CheckFlexService_kr_co_mainticket_strawberry_FlexService"
+                serializeAs="String">
+                <value>http://strawberry.mainticket.co.kr/C2Soft.Earth.Web.Service/FlexService.asmx</value>
+            </setting>
+        </CheckFlexService.Properties.Settings>
+    </applicationSettings>
+</configuration>

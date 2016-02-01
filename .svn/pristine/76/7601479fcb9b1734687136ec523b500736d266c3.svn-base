@@ -1,0 +1,105 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using CheckFlexService.kr.co.mainticket.strawberry;
+
+namespace CheckFlexService
+{
+    public partial class frmMain : Form
+    {
+        public frmMain()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+
+            const string _한탄강 = "0007"; // login
+            const string _용자휴 = "0009"; // login
+            const string _자라섬 = "0012";
+            const string _중랑숲 = "0013";
+            const string _너나들 = "0045";
+            const string _바라산 = "0048";
+            const string _도덕산 = "0049";
+            const string _ShopCode = "0001";
+
+           // string url = @"http://strawberry.mainticket.co.kr/C2Soft.Earth.Web.Service/FlexService.asmx";
+           //// FlexService.FlexServiceSoapClient flexService = new FlexService.FlexServiceSoapClient("FlexServiceSoap", url);
+
+           // BasicHttpBinding binding = GetEndpointAddress("FlexServiceSoap");
+           // EndpointAddress endPoint = new EndpointAddress(url);
+           // FlexService.FlexServiceSoapClient flexService = new FlexService.FlexServiceSoapClient(binding, endPoint);
+            //FlexService.ArrayOfAnyType result = flexService.GetScheduleByGroup("0012", "0001", "201507");
+            //FlexService.ArrayOfAnyType result = flexService.GetScheduleByGroup(_중랑숲, "0001", "201507");
+
+             
+            FlexService service = new FlexService();
+
+
+            //object[] result1 = service.GetProductGroupByBook(_자라섬, "0001");
+            //foreach (var item in result1)
+            //{
+            //    BoardSchedule data = item as ScheduleGroup;
+            //}
+
+
+            // object[] result2 = service.GetProductBySeat(_중랑숲, "0001", "0001", "20150725");
+
+            // service.
+
+            // B사이트 44
+            string productCodeB44 = "00003044";
+            string productCodeB46 = "00003046";
+
+
+            //object[] baseData = service.GetBaseData(_자라섬, _ShopCode);
+            object[] baseData = service.GetProductByBook(_자라섬, _ShopCode);
+
+
+            // 특정 사이트 정보
+            object[] result44 = service.GetScheduleByBook(_자라섬, _ShopCode, productCodeB44);
+            foreach (var item in result44)
+            {
+                Schedule data = item as Schedule;
+
+                txtBox.Text += string.Format("PlayDate:{0}, RemainCount:{1}"
+                        , data.PlayDate, data.RemainCount) + "\r\n";
+            }
+
+            // 해당 월 전체 정보
+            object[] result = service.GetScheduleByGroup(_자라섬, _ShopCode, "201508");
+
+
+            // 일자별 그룹정보
+            object[] result1 = service.GetScheduleByGroupMap(_자라섬, _ShopCode, "0004", "20150829", "20150829");
+
+            foreach (var item in result)
+            {
+                ScheduleGroup data = item as ScheduleGroup;
+
+                txtBox.Text += string.Format("GroupCode:{0}, GroupKind:{1}, GroupName:{2}, MaxSaleCount:{3}, PlayDate:{4}, PlayDays:{5}, ProductRemainCount:{6}"
+                        , data.GroupCode, data.GroupKind, data.GroupName, data.MaxSaleCount, data.PlayDate, data.PlayDays, data.ProductRemainCount) + "\r\n";
+            }
+
+
+            foreach (var item in result1)
+            {
+                ProductMap data = item as ProductMap;
+
+                txtBox.Text += string.Format("GroupCode:{0}, GroupKind:{1}, GroupName:{2}, MaxSaleCount:{3}, PlayDate:{4}, PlayDays:{5}, ProductRemainCount:{6}, RemainCount:{7}, StatusCode: {8}"
+                        , data.GroupCode, data.OptionAmount, data.OptionFlag, data.OptionName, data.OptionYn, data.ProductCode, data.ProductName, data.RemainCount, data.StatusCode ) + "\r\n";
+            }
+
+
+
+        }
+    }
+}

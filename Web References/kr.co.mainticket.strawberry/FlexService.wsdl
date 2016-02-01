@@ -1,0 +1,3747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetProductGroupByBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductGroupByBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductGroupByBookResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Payment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlNote" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberKind">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MemberKindCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberKindName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountValue" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberInformation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MemberCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PassWord" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberKindCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberSSN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountValue" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddDiscountValue" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerCMS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Depositor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepositorSSN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiptFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BankFee" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResultCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OptionSale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShopCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlaySequence" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleSequence" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundFlag" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleCnt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefundFee" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TicketSale">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlaySequence" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SaleSequence" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefundRatio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PenaltyFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RefundProcess" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullPaymentYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullPaymentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepositPaymentYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepositPaymentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkDatetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreminmYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberDiscountYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverNumberCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverNumberFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverTimeFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionFee" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookNo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Postal">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductOption">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShopCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DefaultCnt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinCnt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxCnt" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="OrderNbr" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UseFlag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductMap">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="XCoordinate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="YCoordinate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MapWidth" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MapHeight" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RemainCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OptionAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OptionFlag" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BoardSchedule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDay" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaleYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RemainCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BaseData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ServerIp" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ServerPort" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentLimitHour" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OnLineNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinProductFee" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxProductFee" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinEntranceLimit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxEntranceLimit" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ShopName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ListBookYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MapBookYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusBookYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CalendarBookYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxSaleCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberCertification" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberLimitAge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReservationFeeRatio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PasswordSendType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RealAccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberKindYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelLimitDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelLimitHour" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearLimitDays" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NearPaymentLimitHour" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountKind" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MyPage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BookNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThumbnailUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BookStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DepositAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepositStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerSSN" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BalanceAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTelephoneNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerMobileNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankDepositor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RefundDatetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentLimitDatetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustimerEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SequenceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardSequenceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CashSequenceNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberDiscountYn" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountCompPlayDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountedYn" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="CheckInYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OriginalDepostAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupKind" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CmsFee" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Common">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CommonCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CommonName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ScheduleGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDays" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductRemainCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupKind" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxSaleCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ScheduleTime">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDays" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RemainCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductFee" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PremiumYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlaySequence" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Schedule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayDays" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RemainCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductFee" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountYn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PremiumYn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlaySequence" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductImage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThumbnailUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WindowUrl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupKind" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductDiscountFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductPremiumFee" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EntranceLimit" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Size" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxSaleCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImageUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThumbnailUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WindowUrl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupKind" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BookLimitCount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductByBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductByBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductByBookResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductByTimeTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupKind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductByTimeTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductByTimeTableResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductImageResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByBookResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByTimeTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByTimeTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByTimeTableResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yearMonth" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByGroupResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupCode1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommonByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommonByGroupResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyPageResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalBongGetMyPage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalBongGetMyPageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CalBongGetMyPageResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBaseDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBaseDataResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoardSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yearMonth" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBoardScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBoardScheduleResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductMapResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByGroupMap">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByGroupMapResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByGroupMapResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductOption">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ShopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GroupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductOptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductOptionResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addressName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPostalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPostalResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByTicketSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByTicketSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookDetailByTicketSaleResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByTicketRefund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByTicketRefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookDetailByTicketRefundResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByOptionSale">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookDetailByOptionSaleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookDetailByOptionSaleResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerCMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerCMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerCMSResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberLoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnMemberLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnMemberLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnMemberLoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberLoginByGuest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberSsn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmailSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SmsSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberLoginByGuestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberLoginByGuestResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberDiscountDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberDiscountDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberDiscountDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnMemberCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUnMemberCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUnMemberCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSystemDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSystemDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSystemDateTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberKind">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="useYn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberKindResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberKindResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductBySeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductBySeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductBySeatResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShopPaymentByWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShopPaymentByWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShopPaymentByWebResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Booking">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankDepositor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depositorSSN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiumYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionYn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitHour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearPaymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookingByGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByGroupNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="optionYn" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitHour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearPaymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductOption" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckBit" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CheckData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByGroupNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookingByGroupNewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="paymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="playSequence" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="productCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelLimitHour" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearLimitDays" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nearPaymentLimitHour" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookingByTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookingByTimeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductFilterList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductFilterListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductFilterListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBookByBankInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankDepositor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depositorSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBookByBankInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveBookByBankInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberDiscount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="discountValue" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="addDiscountValue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberDiscountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberDiscountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberDiscountCancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="discountValue" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberDiscountCancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberDiscountCancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBankInfomationOrCarNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankDepositor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depositorSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveBankInfomationOrCarNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveBankInfomationOrCarNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LodgingRefundByWeb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelAll" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LodgingRefundByWebResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LodgingRefundByWebResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LodgingRefundByWeb2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cancelAll" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playSequence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleSequence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LodgingRefundByWeb2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LodgingRefundByWeb2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refund">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullPaymentYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depositPaymentYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refundFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiumYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberDiscountYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelAll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="autoCancelYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupPaymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refundPaymentFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originalPaymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RefundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RefundResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refund2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullPaymentYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="depositPaymentYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refundFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playSequence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleSequence" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="discountYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="premiumYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberDiscountYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cancelAll" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="autoCancelYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupPaymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="paymentKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="refundPaymentFee" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originalPaymentCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accountKind" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MemberId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Refund2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Refund2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByGeneralCard">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="track2Data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avaliablePeriod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticationType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instrallPeriod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vatFee" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxiumAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByGeneralCardResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByGeneralCardResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByISP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instrallPeriod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxiumAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KVPCardCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByISPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByISPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentBy3D">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="track2Data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="avaliablePeriod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticationType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="instrallPeriod" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="vatFee" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxiumAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cavv" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentBy3DResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentBy3DResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByRealAccountKFTC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByRealAccountKFTCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByRealAccountKFTCResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByRealAccountKFTCByAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mtid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerEMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerTelephoneNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByRealAccountKFTCByAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByRealAccountKFTCByAuthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByVirtual">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="saleUserId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByVirtualResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByVirtualResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqueNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalPaymentFee" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileCompany" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendMail" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="authenticationNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookPaymentByMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookPaymentByMobileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookAfterApprovalCashSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="requestCardSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashSaveCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashSaveData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cashSaveType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputMethod" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BookAfterApprovalCashSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BookAfterApprovalCashSaveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationMobilePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobileCompany" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleAmount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="goodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="playDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="saleCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendMail" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="approvalType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationMobilePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AuthenticationMobilePaymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookRefunded">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bookNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBookRefundedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBookRefundedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileCertification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="participationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileCompany" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="certificationNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverIp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="serverPort" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="firstSend" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileCertificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileCertificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberCertification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="errorMessage1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="certificationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ortherSequenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipinNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberCertificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveMemberCertificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealNameCertification">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealNameCertificationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealNameCertificationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealNameCertificationOther">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RealNameCertificationOtherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RealNameCertificationOtherResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberIdCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberIdCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberIdCheckResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberJoin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberJoinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberJoinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberJoinByIPin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberKindCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="workId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="certificationCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipinNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberJoinByIPinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MemberJoinByIPinResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberExistsByMobileNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberExistsByMobileNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberExistsByMobileNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberExistsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberIdByMobileNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberIdByMobileNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberIdByMobileNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMemberPw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMemberPwResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMemberPwResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCardSequenceNo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCardSequenceNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCardSequenceNoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberByWithdraw">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberSSN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberByWithdrawResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveMemberByWithdrawResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberByEdit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telephoneNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="address2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smsSendYn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updateId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveMemberByEditResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveMemberByEditResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrawEndDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="companyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDrawEndDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDrawEndDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProductGroupByBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductGroupByBook" />
+  </wsdl:message>
+  <wsdl:message name="GetProductGroupByBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductGroupByBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductByBook" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductByBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByTimeTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductByTimeTable" />
+  </wsdl:message>
+  <wsdl:message name="GetProductByTimeTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductByTimeTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductImageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductImage" />
+  </wsdl:message>
+  <wsdl:message name="GetProductImageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByBookSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleByBook" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByBookSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByTimeTableSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleByTimeTable" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByTimeTableSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByTimeTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommonByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommonByGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetCommonByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommonByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyPage" />
+  </wsdl:message>
+  <wsdl:message name="GetMyPageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalBongGetMyPageSoapIn">
+    <wsdl:part name="parameters" element="tns:CalBongGetMyPage" />
+  </wsdl:message>
+  <wsdl:message name="CalBongGetMyPageSoapOut">
+    <wsdl:part name="parameters" element="tns:CalBongGetMyPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBaseData" />
+  </wsdl:message>
+  <wsdl:message name="GetBaseDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBaseDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBoardScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBoardSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetBoardScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBoardScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductMapSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductMap" />
+  </wsdl:message>
+  <wsdl:message name="GetProductMapSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByGroupMapSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleByGroupMap" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByGroupMapSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByGroupMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductOptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductOption" />
+  </wsdl:message>
+  <wsdl:message name="GetProductOptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPostalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPostal" />
+  </wsdl:message>
+  <wsdl:message name="GetPostalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPostalResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByTicketSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByTicketSale" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByTicketSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByTicketSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByTicketRefundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByTicketRefund" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByTicketRefundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByTicketRefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByOptionSaleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByOptionSale" />
+  </wsdl:message>
+  <wsdl:message name="GetBookDetailByOptionSaleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookDetailByOptionSaleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerCMSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerCMS" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerCMSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerCMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberLogin" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnMemberLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnMemberLogin" />
+  </wsdl:message>
+  <wsdl:message name="GetUnMemberLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnMemberLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberLoginByGuestSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberLoginByGuest" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberLoginByGuestSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberLoginByGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberDiscountDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberDiscountDate" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberDiscountDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberDiscountDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUnMemberCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUnMemberCode" />
+  </wsdl:message>
+  <wsdl:message name="GetUnMemberCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUnMemberCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberKindSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberKind" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberKindSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductBySeatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductBySeat" />
+  </wsdl:message>
+  <wsdl:message name="GetProductBySeatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductBySeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShopPaymentByWebSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShopPaymentByWeb" />
+  </wsdl:message>
+  <wsdl:message name="GetShopPaymentByWebSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShopPaymentByWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookingSoapIn">
+    <wsdl:part name="parameters" element="tns:Booking" />
+  </wsdl:message>
+  <wsdl:message name="BookingSoapOut">
+    <wsdl:part name="parameters" element="tns:BookingResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookingByGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:BookingByGroup" />
+  </wsdl:message>
+  <wsdl:message name="BookingByGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:BookingByGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookingByGroupNewSoapIn">
+    <wsdl:part name="parameters" element="tns:BookingByGroupNew" />
+  </wsdl:message>
+  <wsdl:message name="BookingByGroupNewSoapOut">
+    <wsdl:part name="parameters" element="tns:BookingByGroupNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookingByTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:BookingByTime" />
+  </wsdl:message>
+  <wsdl:message name="BookingByTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:BookingByTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductFilterListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductFilterList" />
+  </wsdl:message>
+  <wsdl:message name="GetProductFilterListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductFilterListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBookByBankInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBookByBankInformation" />
+  </wsdl:message>
+  <wsdl:message name="SaveBookByBankInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBookByBankInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberDiscountSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberDiscount" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberDiscountSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberDiscountCancelSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberDiscountCancel" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberDiscountCancelSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberDiscountCancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveBankInfomationOrCarNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveBankInfomationOrCarNumber" />
+  </wsdl:message>
+  <wsdl:message name="SaveBankInfomationOrCarNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveBankInfomationOrCarNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="LodgingRefundByWebSoapIn">
+    <wsdl:part name="parameters" element="tns:LodgingRefundByWeb" />
+  </wsdl:message>
+  <wsdl:message name="LodgingRefundByWebSoapOut">
+    <wsdl:part name="parameters" element="tns:LodgingRefundByWebResponse" />
+  </wsdl:message>
+  <wsdl:message name="LodgingRefundByWeb2SoapIn">
+    <wsdl:part name="parameters" element="tns:LodgingRefundByWeb2" />
+  </wsdl:message>
+  <wsdl:message name="LodgingRefundByWeb2SoapOut">
+    <wsdl:part name="parameters" element="tns:LodgingRefundByWeb2Response" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapIn">
+    <wsdl:part name="parameters" element="tns:Refund" />
+  </wsdl:message>
+  <wsdl:message name="RefundSoapOut">
+    <wsdl:part name="parameters" element="tns:RefundResponse" />
+  </wsdl:message>
+  <wsdl:message name="Refund2SoapIn">
+    <wsdl:part name="parameters" element="tns:Refund2" />
+  </wsdl:message>
+  <wsdl:message name="Refund2SoapOut">
+    <wsdl:part name="parameters" element="tns:Refund2Response" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByGeneralCardSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByGeneralCard" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByGeneralCardSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByGeneralCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByISPSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByISP" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByISPSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByISPResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentBy3DSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentBy3D" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentBy3DSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentBy3DResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByRealAccountKFTCSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByRealAccountKFTC" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByRealAccountKFTCSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByRealAccountKFTCResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByRealAccountKFTCByAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByRealAccountKFTCByAuth" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByRealAccountKFTCByAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByRealAccountKFTCByAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByVirtualSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByVirtual" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByVirtualSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByVirtualResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:BookPaymentByMobile" />
+  </wsdl:message>
+  <wsdl:message name="BookPaymentByMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:BookPaymentByMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="BookAfterApprovalCashSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:BookAfterApprovalCashSave" />
+  </wsdl:message>
+  <wsdl:message name="BookAfterApprovalCashSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:BookAfterApprovalCashSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticationMobilePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticationMobilePayment" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticationMobilePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticationMobilePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBookRefundedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBookRefunded" />
+  </wsdl:message>
+  <wsdl:message name="GetBookRefundedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBookRefundedResponse" />
+  </wsdl:message>
+  <wsdl:message name="MobileCertificationSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileCertification" />
+  </wsdl:message>
+  <wsdl:message name="MobileCertificationSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileCertificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberCertificationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberCertification" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberCertificationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberCertificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealNameCertificationSoapIn">
+    <wsdl:part name="parameters" element="tns:RealNameCertification" />
+  </wsdl:message>
+  <wsdl:message name="RealNameCertificationSoapOut">
+    <wsdl:part name="parameters" element="tns:RealNameCertificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RealNameCertificationOtherSoapIn">
+    <wsdl:part name="parameters" element="tns:RealNameCertificationOther" />
+  </wsdl:message>
+  <wsdl:message name="RealNameCertificationOtherSoapOut">
+    <wsdl:part name="parameters" element="tns:RealNameCertificationOtherResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberIdCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberIdCheck" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberIdCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberIdCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberJoinSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberJoin" />
+  </wsdl:message>
+  <wsdl:message name="MemberJoinSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberJoinResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberJoinByIPinSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberJoinByIPin" />
+  </wsdl:message>
+  <wsdl:message name="MemberJoinByIPinSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberJoinByIPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberExistsByMobileNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberExistsByMobileNo" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberExistsByMobileNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberExistsByMobileNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberExists" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberIdByMobileNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberIdByMobileNo" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberIdByMobileNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberIdByMobileNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberPassword" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMemberPwSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMemberPw" />
+  </wsdl:message>
+  <wsdl:message name="SendMemberPwSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMemberPwResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSequenceNoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCardSequenceNo" />
+  </wsdl:message>
+  <wsdl:message name="GetCardSequenceNoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCardSequenceNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberByWithdrawSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberByWithdraw" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberByWithdrawSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberByWithdrawResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberByEditSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveMemberByEdit" />
+  </wsdl:message>
+  <wsdl:message name="SaveMemberByEditSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveMemberByEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMember" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDrawEndDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDrawEndDate" />
+  </wsdl:message>
+  <wsdl:message name="GetDrawEndDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDrawEndDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FlexServiceSoap">
+    <wsdl:operation name="GetProductGroupByBook">
+      <wsdl:input message="tns:GetProductGroupByBookSoapIn" />
+      <wsdl:output message="tns:GetProductGroupByBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByBook">
+      <wsdl:input message="tns:GetProductByBookSoapIn" />
+      <wsdl:output message="tns:GetProductByBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByTimeTable">
+      <wsdl:input message="tns:GetProductByTimeTableSoapIn" />
+      <wsdl:output message="tns:GetProductByTimeTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <wsdl:input message="tns:GetProductImageSoapIn" />
+      <wsdl:output message="tns:GetProductImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByBook">
+      <wsdl:input message="tns:GetScheduleByBookSoapIn" />
+      <wsdl:output message="tns:GetScheduleByBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByTimeTable">
+      <wsdl:input message="tns:GetScheduleByTimeTableSoapIn" />
+      <wsdl:output message="tns:GetScheduleByTimeTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroup">
+      <wsdl:input message="tns:GetScheduleByGroupSoapIn" />
+      <wsdl:output message="tns:GetScheduleByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommonByGroup">
+      <wsdl:input message="tns:GetCommonByGroupSoapIn" />
+      <wsdl:output message="tns:GetCommonByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPage">
+      <wsdl:input message="tns:GetMyPageSoapIn" />
+      <wsdl:output message="tns:GetMyPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalBongGetMyPage">
+      <wsdl:input message="tns:CalBongGetMyPageSoapIn" />
+      <wsdl:output message="tns:CalBongGetMyPageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <wsdl:input message="tns:GetBaseDataSoapIn" />
+      <wsdl:output message="tns:GetBaseDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBoardSchedule">
+      <wsdl:input message="tns:GetBoardScheduleSoapIn" />
+      <wsdl:output message="tns:GetBoardScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMap">
+      <wsdl:input message="tns:GetProductMapSoapIn" />
+      <wsdl:output message="tns:GetProductMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroupMap">
+      <wsdl:input message="tns:GetScheduleByGroupMapSoapIn" />
+      <wsdl:output message="tns:GetScheduleByGroupMapSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOption">
+      <wsdl:input message="tns:GetProductOptionSoapIn" />
+      <wsdl:output message="tns:GetProductOptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPostal">
+      <wsdl:input message="tns:GetPostalSoapIn" />
+      <wsdl:output message="tns:GetPostalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketSale">
+      <wsdl:input message="tns:GetBookDetailByTicketSaleSoapIn" />
+      <wsdl:output message="tns:GetBookDetailByTicketSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketRefund">
+      <wsdl:input message="tns:GetBookDetailByTicketRefundSoapIn" />
+      <wsdl:output message="tns:GetBookDetailByTicketRefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByOptionSale">
+      <wsdl:input message="tns:GetBookDetailByOptionSaleSoapIn" />
+      <wsdl:output message="tns:GetBookDetailByOptionSaleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCMS">
+      <wsdl:input message="tns:GetCustomerCMSSoapIn" />
+      <wsdl:output message="tns:GetCustomerCMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLogin">
+      <wsdl:input message="tns:GetMemberLoginSoapIn" />
+      <wsdl:output message="tns:GetMemberLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberLogin">
+      <wsdl:input message="tns:GetUnMemberLoginSoapIn" />
+      <wsdl:output message="tns:GetUnMemberLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLoginByGuest">
+      <wsdl:input message="tns:GetMemberLoginByGuestSoapIn" />
+      <wsdl:output message="tns:GetMemberLoginByGuestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberDiscountDate">
+      <wsdl:input message="tns:GetMemberDiscountDateSoapIn" />
+      <wsdl:output message="tns:GetMemberDiscountDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberCode">
+      <wsdl:input message="tns:GetUnMemberCodeSoapIn" />
+      <wsdl:output message="tns:GetUnMemberCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDateTime">
+      <wsdl:input message="tns:GetSystemDateTimeSoapIn" />
+      <wsdl:output message="tns:GetSystemDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberKind">
+      <wsdl:input message="tns:GetMemberKindSoapIn" />
+      <wsdl:output message="tns:GetMemberKindSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductBySeat">
+      <wsdl:input message="tns:GetProductBySeatSoapIn" />
+      <wsdl:output message="tns:GetProductBySeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShopPaymentByWeb">
+      <wsdl:input message="tns:GetShopPaymentByWebSoapIn" />
+      <wsdl:output message="tns:GetShopPaymentByWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Booking">
+      <wsdl:input message="tns:BookingSoapIn" />
+      <wsdl:output message="tns:BookingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroup">
+      <wsdl:input message="tns:BookingByGroupSoapIn" />
+      <wsdl:output message="tns:BookingByGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroupNew">
+      <wsdl:input message="tns:BookingByGroupNewSoapIn" />
+      <wsdl:output message="tns:BookingByGroupNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookingByTime">
+      <wsdl:input message="tns:BookingByTimeSoapIn" />
+      <wsdl:output message="tns:BookingByTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductFilterList">
+      <wsdl:input message="tns:GetProductFilterListSoapIn" />
+      <wsdl:output message="tns:GetProductFilterListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookByBankInformation">
+      <wsdl:input message="tns:SaveBookByBankInformationSoapIn" />
+      <wsdl:output message="tns:SaveBookByBankInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscount">
+      <wsdl:input message="tns:SaveMemberDiscountSoapIn" />
+      <wsdl:output message="tns:SaveMemberDiscountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscountCancel">
+      <wsdl:input message="tns:SaveMemberDiscountCancelSoapIn" />
+      <wsdl:output message="tns:SaveMemberDiscountCancelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBankInfomationOrCarNumber">
+      <wsdl:input message="tns:SaveBankInfomationOrCarNumberSoapIn" />
+      <wsdl:output message="tns:SaveBankInfomationOrCarNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb">
+      <wsdl:input message="tns:LodgingRefundByWebSoapIn" />
+      <wsdl:output message="tns:LodgingRefundByWebSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb2">
+      <wsdl:input message="tns:LodgingRefundByWeb2SoapIn" />
+      <wsdl:output message="tns:LodgingRefundByWeb2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <wsdl:input message="tns:RefundSoapIn" />
+      <wsdl:output message="tns:RefundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Refund2">
+      <wsdl:input message="tns:Refund2SoapIn" />
+      <wsdl:output message="tns:Refund2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByGeneralCard">
+      <wsdl:input message="tns:BookPaymentByGeneralCardSoapIn" />
+      <wsdl:output message="tns:BookPaymentByGeneralCardSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByISP">
+      <wsdl:input message="tns:BookPaymentByISPSoapIn" />
+      <wsdl:output message="tns:BookPaymentByISPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentBy3D">
+      <wsdl:input message="tns:BookPaymentBy3DSoapIn" />
+      <wsdl:output message="tns:BookPaymentBy3DSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTC">
+      <wsdl:input message="tns:BookPaymentByRealAccountKFTCSoapIn" />
+      <wsdl:output message="tns:BookPaymentByRealAccountKFTCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTCByAuth">
+      <wsdl:input message="tns:BookPaymentByRealAccountKFTCByAuthSoapIn" />
+      <wsdl:output message="tns:BookPaymentByRealAccountKFTCByAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByVirtual">
+      <wsdl:input message="tns:BookPaymentByVirtualSoapIn" />
+      <wsdl:output message="tns:BookPaymentByVirtualSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByMobile">
+      <wsdl:input message="tns:BookPaymentByMobileSoapIn" />
+      <wsdl:output message="tns:BookPaymentByMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BookAfterApprovalCashSave">
+      <wsdl:input message="tns:BookAfterApprovalCashSaveSoapIn" />
+      <wsdl:output message="tns:BookAfterApprovalCashSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationMobilePayment">
+      <wsdl:input message="tns:AuthenticationMobilePaymentSoapIn" />
+      <wsdl:output message="tns:AuthenticationMobilePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookRefunded">
+      <wsdl:input message="tns:GetBookRefundedSoapIn" />
+      <wsdl:output message="tns:GetBookRefundedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MobileCertification">
+      <wsdl:input message="tns:MobileCertificationSoapIn" />
+      <wsdl:output message="tns:MobileCertificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberCertification">
+      <wsdl:input message="tns:SaveMemberCertificationSoapIn" />
+      <wsdl:output message="tns:SaveMemberCertificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertification">
+      <wsdl:input message="tns:RealNameCertificationSoapIn" />
+      <wsdl:output message="tns:RealNameCertificationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertificationOther">
+      <wsdl:input message="tns:RealNameCertificationOtherSoapIn" />
+      <wsdl:output message="tns:RealNameCertificationOtherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdCheck">
+      <wsdl:input message="tns:GetMemberIdCheckSoapIn" />
+      <wsdl:output message="tns:GetMemberIdCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoin">
+      <wsdl:input message="tns:MemberJoinSoapIn" />
+      <wsdl:output message="tns:MemberJoinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoinByIPin">
+      <wsdl:input message="tns:MemberJoinByIPinSoapIn" />
+      <wsdl:output message="tns:MemberJoinByIPinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExistsByMobileNo">
+      <wsdl:input message="tns:GetMemberExistsByMobileNoSoapIn" />
+      <wsdl:output message="tns:GetMemberExistsByMobileNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExists">
+      <wsdl:input message="tns:GetMemberExistsSoapIn" />
+      <wsdl:output message="tns:GetMemberExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdByMobileNo">
+      <wsdl:input message="tns:GetMemberIdByMobileNoSoapIn" />
+      <wsdl:output message="tns:GetMemberIdByMobileNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <wsdl:input message="tns:GetMemberPasswordSoapIn" />
+      <wsdl:output message="tns:GetMemberPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMemberPw">
+      <wsdl:input message="tns:SendMemberPwSoapIn" />
+      <wsdl:output message="tns:SendMemberPwSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSequenceNo">
+      <wsdl:input message="tns:GetCardSequenceNoSoapIn" />
+      <wsdl:output message="tns:GetCardSequenceNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByWithdraw">
+      <wsdl:input message="tns:SaveMemberByWithdrawSoapIn" />
+      <wsdl:output message="tns:SaveMemberByWithdrawSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByEdit">
+      <wsdl:input message="tns:SaveMemberByEditSoapIn" />
+      <wsdl:output message="tns:SaveMemberByEditSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <wsdl:input message="tns:GetMemberSoapIn" />
+      <wsdl:output message="tns:GetMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDrawEndDate">
+      <wsdl:input message="tns:GetDrawEndDateSoapIn" />
+      <wsdl:output message="tns:GetDrawEndDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlexServiceSoap" type="tns:FlexServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProductGroupByBook">
+      <soap:operation soapAction="http://tempuri.org/GetProductGroupByBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByBook">
+      <soap:operation soapAction="http://tempuri.org/GetProductByBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByTimeTable">
+      <soap:operation soapAction="http://tempuri.org/GetProductByTimeTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap:operation soapAction="http://tempuri.org/GetProductImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByBook">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleByBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByTimeTable">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleByTimeTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroup">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommonByGroup">
+      <soap:operation soapAction="http://tempuri.org/GetCommonByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPage">
+      <soap:operation soapAction="http://tempuri.org/GetMyPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalBongGetMyPage">
+      <soap:operation soapAction="http://tempuri.org/CalBongGetMyPage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <soap:operation soapAction="http://tempuri.org/GetBaseData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoardSchedule">
+      <soap:operation soapAction="http://tempuri.org/GetBoardSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMap">
+      <soap:operation soapAction="http://tempuri.org/GetProductMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroupMap">
+      <soap:operation soapAction="http://tempuri.org/GetScheduleByGroupMap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOption">
+      <soap:operation soapAction="http://tempuri.org/GetProductOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostal">
+      <soap:operation soapAction="http://tempuri.org/GetPostal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketSale">
+      <soap:operation soapAction="http://tempuri.org/GetBookDetailByTicketSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketRefund">
+      <soap:operation soapAction="http://tempuri.org/GetBookDetailByTicketRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByOptionSale">
+      <soap:operation soapAction="http://tempuri.org/GetBookDetailByOptionSale" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCMS">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerCMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLogin">
+      <soap:operation soapAction="http://tempuri.org/GetMemberLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberLogin">
+      <soap:operation soapAction="http://tempuri.org/GetUnMemberLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLoginByGuest">
+      <soap:operation soapAction="http://tempuri.org/GetMemberLoginByGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberDiscountDate">
+      <soap:operation soapAction="http://tempuri.org/GetMemberDiscountDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberCode">
+      <soap:operation soapAction="http://tempuri.org/GetUnMemberCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDateTime">
+      <soap:operation soapAction="http://tempuri.org/GetSystemDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberKind">
+      <soap:operation soapAction="http://tempuri.org/GetMemberKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductBySeat">
+      <soap:operation soapAction="http://tempuri.org/GetProductBySeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopPaymentByWeb">
+      <soap:operation soapAction="http://tempuri.org/GetShopPaymentByWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Booking">
+      <soap:operation soapAction="http://tempuri.org/Booking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroup">
+      <soap:operation soapAction="http://tempuri.org/BookingByGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroupNew">
+      <soap:operation soapAction="http://tempuri.org/BookingByGroupNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByTime">
+      <soap:operation soapAction="http://tempuri.org/BookingByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductFilterList">
+      <soap:operation soapAction="http://tempuri.org/GetProductFilterList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookByBankInformation">
+      <soap:operation soapAction="http://tempuri.org/SaveBookByBankInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscount">
+      <soap:operation soapAction="http://tempuri.org/SaveMemberDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscountCancel">
+      <soap:operation soapAction="http://tempuri.org/SaveMemberDiscountCancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBankInfomationOrCarNumber">
+      <soap:operation soapAction="http://tempuri.org/SaveBankInfomationOrCarNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb">
+      <soap:operation soapAction="http://tempuri.org/LodgingRefundByWeb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb2">
+      <soap:operation soapAction="http://tempuri.org/LodgingRefundByWeb2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap:operation soapAction="http://tempuri.org/Refund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund2">
+      <soap:operation soapAction="http://tempuri.org/Refund2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByGeneralCard">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByGeneralCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByISP">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByISP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentBy3D">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentBy3D" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTC">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByRealAccountKFTC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTCByAuth">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByRealAccountKFTCByAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByVirtual">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByVirtual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByMobile">
+      <soap:operation soapAction="http://tempuri.org/BookPaymentByMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookAfterApprovalCashSave">
+      <soap:operation soapAction="http://tempuri.org/BookAfterApprovalCashSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationMobilePayment">
+      <soap:operation soapAction="http://tempuri.org/AuthenticationMobilePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookRefunded">
+      <soap:operation soapAction="http://tempuri.org/GetBookRefunded" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileCertification">
+      <soap:operation soapAction="http://tempuri.org/MobileCertification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberCertification">
+      <soap:operation soapAction="http://tempuri.org/SaveMemberCertification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertification">
+      <soap:operation soapAction="http://tempuri.org/RealNameCertification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertificationOther">
+      <soap:operation soapAction="http://tempuri.org/RealNameCertificationOther" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdCheck">
+      <soap:operation soapAction="http://tempuri.org/GetMemberIdCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoin">
+      <soap:operation soapAction="http://tempuri.org/MemberJoin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoinByIPin">
+      <soap:operation soapAction="http://tempuri.org/MemberJoinByIPin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExistsByMobileNo">
+      <soap:operation soapAction="http://tempuri.org/GetMemberExistsByMobileNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExists">
+      <soap:operation soapAction="http://tempuri.org/GetMemberExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdByMobileNo">
+      <soap:operation soapAction="http://tempuri.org/GetMemberIdByMobileNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <soap:operation soapAction="http://tempuri.org/GetMemberPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMemberPw">
+      <soap:operation soapAction="http://tempuri.org/SendMemberPw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSequenceNo">
+      <soap:operation soapAction="http://tempuri.org/GetCardSequenceNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByWithdraw">
+      <soap:operation soapAction="http://tempuri.org/SaveMemberByWithdraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByEdit">
+      <soap:operation soapAction="http://tempuri.org/SaveMemberByEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap:operation soapAction="http://tempuri.org/GetMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrawEndDate">
+      <soap:operation soapAction="http://tempuri.org/GetDrawEndDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FlexServiceSoap12" type="tns:FlexServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProductGroupByBook">
+      <soap12:operation soapAction="http://tempuri.org/GetProductGroupByBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByBook">
+      <soap12:operation soapAction="http://tempuri.org/GetProductByBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByTimeTable">
+      <soap12:operation soapAction="http://tempuri.org/GetProductByTimeTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductImage">
+      <soap12:operation soapAction="http://tempuri.org/GetProductImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByBook">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleByBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByTimeTable">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleByTimeTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommonByGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetCommonByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyPage">
+      <soap12:operation soapAction="http://tempuri.org/GetMyPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalBongGetMyPage">
+      <soap12:operation soapAction="http://tempuri.org/CalBongGetMyPage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBaseData">
+      <soap12:operation soapAction="http://tempuri.org/GetBaseData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBoardSchedule">
+      <soap12:operation soapAction="http://tempuri.org/GetBoardSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductMap">
+      <soap12:operation soapAction="http://tempuri.org/GetProductMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleByGroupMap">
+      <soap12:operation soapAction="http://tempuri.org/GetScheduleByGroupMap" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductOption">
+      <soap12:operation soapAction="http://tempuri.org/GetProductOption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPostal">
+      <soap12:operation soapAction="http://tempuri.org/GetPostal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketSale">
+      <soap12:operation soapAction="http://tempuri.org/GetBookDetailByTicketSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByTicketRefund">
+      <soap12:operation soapAction="http://tempuri.org/GetBookDetailByTicketRefund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookDetailByOptionSale">
+      <soap12:operation soapAction="http://tempuri.org/GetBookDetailByOptionSale" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCMS">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerCMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLogin">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberLogin">
+      <soap12:operation soapAction="http://tempuri.org/GetUnMemberLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberLoginByGuest">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberLoginByGuest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberDiscountDate">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberDiscountDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnMemberCode">
+      <soap12:operation soapAction="http://tempuri.org/GetUnMemberCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDateTime">
+      <soap12:operation soapAction="http://tempuri.org/GetSystemDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberKind">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberKind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductBySeat">
+      <soap12:operation soapAction="http://tempuri.org/GetProductBySeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShopPaymentByWeb">
+      <soap12:operation soapAction="http://tempuri.org/GetShopPaymentByWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Booking">
+      <soap12:operation soapAction="http://tempuri.org/Booking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroup">
+      <soap12:operation soapAction="http://tempuri.org/BookingByGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByGroupNew">
+      <soap12:operation soapAction="http://tempuri.org/BookingByGroupNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookingByTime">
+      <soap12:operation soapAction="http://tempuri.org/BookingByTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductFilterList">
+      <soap12:operation soapAction="http://tempuri.org/GetProductFilterList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBookByBankInformation">
+      <soap12:operation soapAction="http://tempuri.org/SaveBookByBankInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscount">
+      <soap12:operation soapAction="http://tempuri.org/SaveMemberDiscount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberDiscountCancel">
+      <soap12:operation soapAction="http://tempuri.org/SaveMemberDiscountCancel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBankInfomationOrCarNumber">
+      <soap12:operation soapAction="http://tempuri.org/SaveBankInfomationOrCarNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb">
+      <soap12:operation soapAction="http://tempuri.org/LodgingRefundByWeb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LodgingRefundByWeb2">
+      <soap12:operation soapAction="http://tempuri.org/LodgingRefundByWeb2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund">
+      <soap12:operation soapAction="http://tempuri.org/Refund" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Refund2">
+      <soap12:operation soapAction="http://tempuri.org/Refund2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByGeneralCard">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByGeneralCard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByISP">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByISP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentBy3D">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentBy3D" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTC">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByRealAccountKFTC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByRealAccountKFTCByAuth">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByRealAccountKFTCByAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByVirtual">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByVirtual" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookPaymentByMobile">
+      <soap12:operation soapAction="http://tempuri.org/BookPaymentByMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BookAfterApprovalCashSave">
+      <soap12:operation soapAction="http://tempuri.org/BookAfterApprovalCashSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticationMobilePayment">
+      <soap12:operation soapAction="http://tempuri.org/AuthenticationMobilePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookRefunded">
+      <soap12:operation soapAction="http://tempuri.org/GetBookRefunded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MobileCertification">
+      <soap12:operation soapAction="http://tempuri.org/MobileCertification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberCertification">
+      <soap12:operation soapAction="http://tempuri.org/SaveMemberCertification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertification">
+      <soap12:operation soapAction="http://tempuri.org/RealNameCertification" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealNameCertificationOther">
+      <soap12:operation soapAction="http://tempuri.org/RealNameCertificationOther" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdCheck">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberIdCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoin">
+      <soap12:operation soapAction="http://tempuri.org/MemberJoin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberJoinByIPin">
+      <soap12:operation soapAction="http://tempuri.org/MemberJoinByIPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExistsByMobileNo">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberExistsByMobileNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberExists">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberIdByMobileNo">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberIdByMobileNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberPassword">
+      <soap12:operation soapAction="http://tempuri.org/GetMemberPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMemberPw">
+      <soap12:operation soapAction="http://tempuri.org/SendMemberPw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardSequenceNo">
+      <soap12:operation soapAction="http://tempuri.org/GetCardSequenceNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByWithdraw">
+      <soap12:operation soapAction="http://tempuri.org/SaveMemberByWithdraw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMemberByEdit">
+      <soap12:operation soapAction="http://tempuri.org/SaveMemberByEdit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap12:operation soapAction="http://tempuri.org/GetMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDrawEndDate">
+      <soap12:operation soapAction="http://tempuri.org/GetDrawEndDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlexService">
+    <wsdl:port name="FlexServiceSoap" binding="tns:FlexServiceSoap">
+      <soap:address location="http://strawberry.mainticket.co.kr/C2Soft.Earth.Web.Service/FlexService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FlexServiceSoap12" binding="tns:FlexServiceSoap12">
+      <soap12:address location="http://strawberry.mainticket.co.kr/C2Soft.Earth.Web.Service/FlexService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
